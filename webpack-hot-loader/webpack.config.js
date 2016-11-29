@@ -8,7 +8,7 @@ var BUILD_PATH = path.join(__dirname, 'build');
 
 module.exports = {
     debug: true,
-    devtool: "source-map",
+    devtool: 'cheap-module-eval-source-map',
     entry: [
         'webpack-hot-middleware/client',
         path.join(APP_PATH, 'index.jsx')
@@ -22,7 +22,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.jsx$/,
-                loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015'],
+                loaders: ['react-hot-loader/webpack', 'babel?presets[]=react,presets[]=es2015'],
                 include: APP_PATH
             }
         ]
